@@ -1,6 +1,6 @@
 
 server <- function(input, output, session) {
-  factors <- eventReactive(input$analyse, {
+  factors <- eventReactive(c(input$variable1, input$variable2, input$variable3), {
     c(input$variable1, input$variable2, input$variable3)
   })
 
@@ -38,6 +38,6 @@ server <- function(input, output, session) {
   output$formula3 <- renderText({ formula3() })
   output$summary3 <- renderPrint({ summary(model3()) })
 
-  output$anova <- renderPrint({ summary(anova(model1(), model2(), model3())) })
+  output$anova <- renderPrint({ anova(model1(), model2(), model3()) })
   output$anovaTitle <- renderText({ paste(formula1(), "VS", formula2(), "VS", formula3()) })
 }

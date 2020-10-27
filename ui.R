@@ -33,8 +33,8 @@ ui <- fluidPage(
         selectize = TRUE,
         width = NULL,
         size = NULL
-      ),
-      actionButton("analyse", "Analyse")
+      )
+
     ),
     
     mainPanel(
