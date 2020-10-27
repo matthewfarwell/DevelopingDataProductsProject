@@ -1,3 +1,31 @@
+varToDescription <- list(
+  am = "am - Transmission,(0 = automatic, 1 = manual)",
+  cyl = "cyl - Number of cylinders",
+  disp = "disp - Displacement (cu.in.)",
+  hp = "hp - Gross horsepower",
+  drat = "drat - Rear axle ratio",
+  wt = "wt - Weight (1000 lbs)",
+  qsec = "qsec - 1/4 mile time",
+  vs = "vs - Engine (0 = V-shaped, 1 = straight)",
+  gear = "gear - Number of forward gears",
+  carb = "carb - Number of carburetors"
+)
+
+
+createFormula <- function(cs, n) {
+  cols <- cs[1:n]
+  paste("mpg~", paste(cols, collapse="+"), sep="")
+}
+
+createModel <- function(formula) {
+  lm(as.formula(formula), data=mtcars)
+}
+
+comparisonPlot <- function(formula) {
+  m <- createModel(formula)
+  par(mfrow = c(2, 2))
+  plot(m)
+}
 
 server <- function(input, output, session) {
   factors <- eventReactive(c(input$variable1, input$variable2, input$variable3), {

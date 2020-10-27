@@ -1,3 +1,16 @@
+descriptionToVar <- list(
+  "am - Transmission,(0 = automatic, 1 = manual)" = "am",
+  "cyl - Number of cylinders" = "cyl",
+  "disp - Displacement (cu.in.)" = "disp",
+  "hp - Gross horsepower" = "hp",
+  "drat - Rear axle ratio" = "drat",
+  "wt - Weight (1000 lbs)" = "wt",
+  "qsec - 1/4 mile time" = "qsec",
+  "vs - Engine (0 = V-shaped, 1 = straight)" = "vs",
+  "gear - Number of forward gears" = "gear",
+  "carb - Number of carburetors" = "carb"
+)
+
 ui <- fluidPage(
   titlePanel("mtcars regression modelling"),
   
