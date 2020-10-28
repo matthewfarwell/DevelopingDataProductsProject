@@ -25,7 +25,7 @@ How do you find the best combination of independent variables to do your linear 
 
 ========================================================
 
-The [mtcars Shiny App](https://matthewfarwell.shinyapps.io/DevelopingDataProductsProject) allows you to try different combinations of the independent variables and see how well they fit the MPG.
+The <a href="https://matthewfarwell.shinyapps.io/DevelopingDataProductsProject" target="_blank">mtcars Shiny App</a> allows you to try different combinations of the independent variables and see how well they fit the MPG.
 
 ![mtcars regression shiny App](images/initial-page.png)
 
@@ -41,5 +41,5 @@ In the final Anova tab, you have the Anova comparison of the three models.
 
 ![mtcars regression third linear regression](images/anova-tab.png)
 
-Go play with [mtcars Shiny App](https://matthewfarwell.shinyapps.io/DevelopingDataProductsProject) now!
+Go play with <a href="https://matthewfarwell.shinyapps.io/DevelopingDataProductsProject" target="_blank">mtcars Shiny App</a> now!
 
