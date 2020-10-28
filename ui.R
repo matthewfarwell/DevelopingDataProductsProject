@@ -12,11 +12,11 @@ descriptionToVar <- list(
 )
 
 ui <- fluidPage(
-  titlePanel("mtcars regression modelling"),
-  
+  titlePanel("mtcars MPG regression modelling"),
+  br(),
   sidebarLayout(
     sidebarPanel(
-      h1("Please select independent variables"),
+      h1("Please select the variables"),
       selectInput(
         "variable1",
         "First",
@@ -46,7 +46,9 @@ ui <- fluidPage(
         selectize = TRUE,
         width = NULL,
         size = NULL
-      )
+      ),
+      p(textOutput("sidebarDescription1")),
+      p(textOutput("sidebarDescription2"))
 
     ),
     
@@ -55,32 +57,40 @@ ui <- fluidPage(
         tabPanel("Plots",
           verticalLayout(
             h2(textOutput("plotsText1")),
+            p(textOutput("plotsDescription1")),
             plotOutput("plot"),
             h2(textOutput("plotsText2")),
+            p(textOutput("plotsDescription2")),
             tableOutput("correlationsPlot")
           )
         ),
 
-        tabPanel("mpg ~ am + ind1",
+        tabPanel("mpg ~ ind1",
           verticalLayout(
             h3(textOutput("formula1")),
+            p(textOutput("comparisonDescription1")),
             plotOutput("comparisonPlot1"),
+            p(textOutput("summaryDescription1")),
             verbatimTextOutput("summary1")
           )
         ),
 
-        tabPanel("mpg ~ am + ind1 + ind2",
+        tabPanel("mpg ~ ind1 + ind2",
           verticalLayout(
             h3(textOutput("formula2")),
+            p(textOutput("comparisonDescription2")),
             plotOutput("comparisonPlot2"),
+            p(textOutput("summaryDescription2")),
             verbatimTextOutput("summary2")
           )
         ),
 
-        tabPanel("mpg ~ am + ind1 + ind2 + ind3",
+        tabPanel("mpg ~ ind1 + ind2 + ind3",
           verticalLayout(
             h3(textOutput("formula3")),
+            p(textOutput("comparisonDescription3")),
             plotOutput("comparisonPlot3"),
+            p(textOutput("summaryDescription3")),
             verbatimTextOutput("summary3")
           )
         ),
@@ -88,7 +98,7 @@ ui <- fluidPage(
         tabPanel("Anova",
           verticalLayout(
             h3(textOutput("anovaTitle")),
-            p("Anova output for the three competing models"),
+            p("Anova output for the three competing models."),
             verbatimTextOutput("anova")
           )
         )
